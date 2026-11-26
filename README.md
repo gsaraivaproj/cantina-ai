@@ -67,8 +67,9 @@ CANTINA_SCHOOL_ID=1 uv run cantina-demo-eval --toolset sql [--no-notes]
 
 ## About CantinaPro
 
-CantinaPro is a payments platform for school cafeterias (prepaid balances, PIX top-ups,
-counter and kiosk sales, cash registers) that I founded and develop. Its code and schema
+[CantinaPro](https://cantinapro.com.br/users/sign_in) is a payments platform for school
+cafeterias (prepaid balances, PIX top-ups, counter and kiosk sales, cash registers) that I
+founded and develop. Its code and schema
 are private; this repository holds the reusable engine and a fictional demo built on the
 same ideas.
 

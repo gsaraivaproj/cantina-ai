@@ -1,6 +1,6 @@
 # Case study: an AI layer over a real cafeteria system
 
-The engine in this repository was first built against **CantinaPro**, a school
+The engine in this repository was first built against **[CantinaPro](https://cantinapro.com.br/users/sign_in)**, a school
 cafeteria payments product I founded and run in production (Rails, PostgreSQL, PIX
 payments, counter and kiosk sales). Its code and schema are private, so it ran on a local
 copy filled with **synthetic data**: two schools and 90 days of activity generated through
