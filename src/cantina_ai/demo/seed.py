@@ -716,6 +716,10 @@ def main() -> None:
         conn.execute("DROP SCHEMA public CASCADE; CREATE SCHEMA public;")
         conn.execute(cast(LiteralString, SCHEMA.read_text()))
         stats = Seeder(conn).run()
+        # Fresh tables have no planner statistics: without them, row-level security's
+        # EXISTS on parent rows gets a bad plan (seconds instead of milliseconds).
+        conn.commit()
+        conn.execute("ANALYZE")
         # Recreating the schema dropped the per-school roles' grants and policies.
         from cantina_ai.demo.access import POLICY
         from cantina_ai.engine.tenant_guard import setup_sql

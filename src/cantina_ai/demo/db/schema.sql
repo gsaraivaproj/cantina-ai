@@ -169,3 +169,8 @@ CREATE TABLE stock_entries (
 CREATE INDEX ON transactions (school_id, created_at);
 CREATE INDEX ON transactions (student_id, created_at);
 CREATE INDEX ON transaction_items (transaction_id);
+-- Used by the row-level security of the child tables (an EXISTS on the parent) and by
+-- the joins of the stock and statement tools.
+CREATE INDEX ON item_components (item_id);
+CREATE INDEX ON orders (transaction_id);
+CREATE INDEX ON transactions (pays_transaction_id) WHERE pays_transaction_id IS NOT NULL;
