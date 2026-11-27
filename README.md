@@ -1,5 +1,7 @@
 # cantina-ai
 
+[![CI](https://github.com/gsaraivaproj/cantina-ai/actions/workflows/ci.yml/badge.svg)](https://github.com/gsaraivaproj/cantina-ai/actions/workflows/ci.yml)
+
 AI over a school cafeteria system: **MCP tools, RAG, guarded text-to-SQL and LLM
 evaluation**, built from scratch and measured.
 
