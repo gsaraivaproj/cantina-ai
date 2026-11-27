@@ -105,6 +105,11 @@ case now requires the students' names.
   real user's.
 - **Oracles can be wrong too.** One "failure" was the oracle's: a name from another school
   also matched a student here under the search rule. The oracle now uses the same rule.
+- **Row-level security has a performance cost you only see on fresh data.** On CI, a stock
+  query run as the school's role hit the 5 s statement timeout: right after loading, the
+  tables had no planner statistics, and the EXISTS each child-table policy adds got a bad
+  plan (3.1 s locally, against 5 ms after). An `ANALYZE` after loading and an index on the
+  column the policy joins on fixed it.
 - **Isolation held.** Asked to "ignore the configured school", the model refused in every
   setup; with SQL available it queried the schools table and saw only its own: the
   database was the guarantee, not the model's obedience.
